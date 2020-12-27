@@ -1,0 +1,9 @@
+{
+	"monitoringRequests": {
+		"type": ["sub_frame"],
+		"document": false,
+		"origin": false,
+		"mainFrame": false,
+		"description": "related-work--Clickjacking 7"
+	}
+}

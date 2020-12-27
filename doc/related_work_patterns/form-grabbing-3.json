@@ -1,0 +1,29 @@
+// User voting system!
+
+{
+	"mutationMonitoring": {
+		"target": {
+			"nodeName": "form"
+		},
+		"type": {
+			"childNodeMutation": {
+				"addedNodes": [
+					{
+						"nodeName": "butten",
+						"hidden": false,
+						"attributes": {
+							"onsubmit": true
+						}
+					}
+				],
+				"removedNodes": {
+					"nodeName": "input",
+					"attributes": {
+						"type=\"submit\"": true
+					}
+				}
+			}
+		}
+	},
+	"description": "related-work--Form grabbing 3"
+}

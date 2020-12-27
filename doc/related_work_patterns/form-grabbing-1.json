@@ -1,0 +1,16 @@
+{
+	"mutationMonitoring": {
+		"target": {
+			"nodeName": "form"
+		},
+		"type": {
+			"childNodeMutation": {
+				"addedNode": {
+					"nodeName": "input",
+					"hidden": false
+				}
+			}
+		},
+		"description": "related-work--Form grabbing 1"
+	}
+}

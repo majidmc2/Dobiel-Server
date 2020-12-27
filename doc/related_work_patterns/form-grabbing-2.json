@@ -1,0 +1,19 @@
+{
+	"mutationMonitoring": {
+		"target": {
+			"nodeName": "body"
+		},
+		"type": {
+			"childNodeMutation": {
+				"addedNode":  {
+					"nodeName": "form",
+					"hidden": false,
+					"attributes": {
+						"onsubmit": true
+					}
+				}
+			}
+		},
+		"description": "related-work--Form grabbing 2"
+	}
+}

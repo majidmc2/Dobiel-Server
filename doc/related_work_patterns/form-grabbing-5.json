@@ -1,0 +1,8 @@
+{
+	"monitoringRequests":  {
+		"type": ["xmlhttprequest", "script"],
+		"document": false,
+		"origin": false,
+		"description": "related-work--Form grabbing 5"
+	}
+}

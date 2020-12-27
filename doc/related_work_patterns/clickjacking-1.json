@@ -1,0 +1,16 @@
+{
+	"mutationMonitoring":{
+		"type": {
+			"childNodeMutation": {
+				"addedNode": {
+					"nodeName": "iframe",
+					"hidden": true,
+					"style": {
+						"opacity": 0
+					}
+				}
+			}
+		},
+		"description": "related-work--Clickjacking 1"
+	}
+}

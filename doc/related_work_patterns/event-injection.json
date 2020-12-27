@@ -1,0 +1,14 @@
+{
+	"mutationMonitoring": {
+		"target": {
+			"nodeName": "input",
+			"attributes": {
+				"type=\"submit\"": true
+			}
+		},
+		"type": {
+			"attributeMutation": "type"
+		},
+		"description": "related-work--Event Injection"
+	}
+}

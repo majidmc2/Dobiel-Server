@@ -1,0 +1,14 @@
+{
+	"mutationMonitoring": {
+		"target": {
+			"nodeName": "form",
+			"attributes": {
+				"action": true
+			}
+		},
+		"type": {
+			"attributeMutation": "action"
+		},
+		"description": "related-work--Form grabbing 4"
+	}
+}

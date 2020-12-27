@@ -1,0 +1,16 @@
+{
+	"mutationMonitoring": {
+		"type": {
+			"childNodeMutation": {
+				"addedNode": {
+					"nodeName": "embed",
+					"hidden": true,
+					"style": {
+						"z-index": 0
+					}
+				}
+			}
+		},
+		"description": "related-work--Clickjacking 4"
+	}
+}

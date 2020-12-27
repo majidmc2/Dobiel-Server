@@ -1,0 +1,18 @@
+{
+	"mutationMonitoring": {
+		"target": {
+			"nodeName": "head"
+		},
+		"type": {
+			"childNodeMutation": {
+				"removedNode":  {
+					"nodeName": "meta",
+					"attributes": {
+						"http-equiv=\"Content-Security-Policy\"": true
+					}
+				}
+			}
+		},
+		"description": "related-work--Remove SCP tag"
+	}
+}

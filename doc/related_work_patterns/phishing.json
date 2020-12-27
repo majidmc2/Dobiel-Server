@@ -1,0 +1,14 @@
+{
+	"mutationMonitoring": {
+		"target": {
+			"nodeName": "a",
+			"attributes": {
+				"href": true
+			}
+		},
+		"type": {
+			"attributeMutation": "href"
+		},
+		"description": "related-work--Phishing"
+	}
+}
