@@ -36,7 +36,11 @@ def recipient_of_request():
     is_valid = validate_json(json_data, RequestSchema)
 
     if is_valid:
-        return jsonify({"status": "Succeeded"}), 200
+        s, r = send_query(request_pattern_to_query(json_data), "monitoringRequests")
+        if s:
+            return jsonify(r), 200
+        else:
+            return jsonify({"status": "failed"}), 500
     else:
         return jsonify({"error": "Given mutation has invalid syntax"}), 400
 
@@ -47,13 +51,6 @@ def recipient_of_mutation():
     is_valid = validate_json(json_data, MutationSchema)
 
     if is_valid:
-        # if "type" in json_data:
-        #     if "childNodeMutation" in json_data["type"]:
-        #         if "addedNode" in json_data["type"]["childNodeMutation"]:
-        #             if "nodeName" in json_data["type"]["childNodeMutation"]["addedNode"]:
-        #                 if json_data["type"]["childNodeMutation"]["addedNode"]["nodeName"] == "iframe":
-        #                     print("----> ", __import__("json").dumps(mutation_pattern_to_query(json_data)))
-        #                     send_query(mutation_pattern_to_query(json_data), "mutationMonitoring")
         s, r = send_query(mutation_pattern_to_query(json_data), "mutationMonitoring")
         if s:
             return jsonify(r), 200

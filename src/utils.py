@@ -275,12 +275,10 @@ def mutation_pattern_to_query(_pattern):
 
 def request_pattern_to_query(_pattern):
     query = {
-        {
-            "_source": "description",
-            "query": {
-                "bool": {
-                    "must": list()
-                }
+        "_source": "description",
+        "query": {
+            "bool": {
+                "must": list()
             }
         }
     }
@@ -291,7 +289,7 @@ def request_pattern_to_query(_pattern):
         main.append(
             {
                 "match": {
-                    "type": _pattern["type"]
+                    "type": "({}) OR (ALL)".format(_pattern["type"][0])
                 }
             }
         )
@@ -299,7 +297,7 @@ def request_pattern_to_query(_pattern):
         main.append(
             {
                 "match": {
-                    "method": _pattern["method"]
+                    "method": "({}) OR (ALL)".format(_pattern["method"][0])
                 }
             }
         )
@@ -307,7 +305,7 @@ def request_pattern_to_query(_pattern):
         main.append(
             {
                 "match": {
-                    "url": _pattern["url"]
+                    "url": "({}) OR (ALL)".format(_pattern["url"])
                 }
             }
         )
@@ -315,7 +313,7 @@ def request_pattern_to_query(_pattern):
         main.append(
             {
                 "match": {
-                    "documentUrl": _pattern["documentUrl"]
+                    "documentUrl": "({}) OR (ALL)".format(_pattern["documentUrl"])
                 }
             }
         )
@@ -323,7 +321,7 @@ def request_pattern_to_query(_pattern):
         main.append(
             {
                 "match": {
-                    "originUrl": _pattern["originUrl"]
+                    "originUrl": "({}) OR (ALL)".format(_pattern["originUrl"])
                 }
             }
         )
@@ -366,26 +364,23 @@ def request_pattern_to_query(_pattern):
 def send_query(query, document):
     es = app.config['ES_SERVER']
 
-    if document == "mutationMonitoring":
-        try:
+    try:
+        if document == "mutationMonitoring":
             r = es.search(index="dobiel_mutation_monitoring", body=query, request_timeout=20)
-            if r["hits"]["total"]["value"] == 0:
-                return True, {"mutation": "safe", "attack": list(), "error": ""}
-            else:
-                result = {"mutation": "dangers", "attack": list(), "error": ""}
-                for hits in r["hits"]["hits"]:
-                    result["attack"].append(hits["_source"]["description"])
-                return True, result
-        except Exception as e:
-            print(str(e))
-            return False, {"mutation": "", "attack": list(), "error": str(e)}
-
-    elif document == "monitoringRequests":
-        try:
+        elif document == "monitoringRequests":
             r = es.search(index="dobiel_monitoring_requests", body=query, request_timeout=20)
-            print(r)
-            return True
-        except Exception as e:
-            print(str(e))
+        else:
+            return False, {"error": "'document' is invalid"}
 
-    return False
+    except Exception as e:
+        # print(str(e))
+        return False, {"mutation": "", "attack": list(), "error": str(e)}
+
+    else:
+        if r["hits"]["total"]["value"] == 0:
+            return True, {"mutation": "safe", "attack": list(), "error": ""}
+        else:
+            result = {"mutation": "dangers", "attack": list(), "error": ""}
+            for hits in r["hits"]["hits"]:
+                result["attack"].append(hits["_source"]["description"])
+            return True, result
