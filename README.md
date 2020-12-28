@@ -1,4 +1,4 @@
-## Abut
+## About
 Dobile Server (**Dobile** ([see](https://github.com/majidmc2/Dobiel "Link")) is a Man-in-the-Browser Attack detection tool)
  
 ## Elastic Search Configuration 
