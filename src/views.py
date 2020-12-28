@@ -14,16 +14,16 @@ def recipient_of_pattern():
     if "mutationMonitoring" in json_data:
         if validate_json(json_data["mutationMonitoring"], MutationSchema):
             if index_to_es(json_data["mutationMonitoring"], "mutationMonitoring"):
-                return jsonify({"status": "succeeded"}), 200
-            return jsonify({"status": "failed"}), 500
+                return jsonify({"status": "Succeeded"}), 200
+            return jsonify({"status": "Failed"}), 500
         else:
             return jsonify({"error": "Invalid Mutation Monitoring pattern"}), 400
 
     elif "monitoringRequests" in json_data:
         if validate_json(json_data["monitoringRequests"], RequestSchema):
             if index_to_es(json_data["monitoringRequests"], "monitoringRequests"):
-                return jsonify({"status": "succeeded"}), 200
-            return jsonify({"status": "failed"}), 500
+                return jsonify({"status": "Succeeded"}), 200
+            return jsonify({"status": "Failed"}), 500
         else:
             return jsonify({"error": "Invalid Monitoring Request pattern"}), 400
 
@@ -36,7 +36,7 @@ def recipient_of_request():
     is_valid = validate_json(json_data, RequestSchema)
 
     if is_valid:
-        return jsonify({"status": "succeeded"}), 200
+        return jsonify({"status": "Succeeded"}), 200
     else:
         return jsonify({"error": "Given mutation has invalid syntax"}), 400
 
