@@ -8,7 +8,7 @@ from mutation_schema import MutationSchema
 from request_schema import RequestSchema
 
 
-SERVER = "http://192.168.1.103:5007/send_pattern"
+SERVER = "http://[IP]:[PORT]/send_pattern"
 
 
 def send_to_server(_pattern):
