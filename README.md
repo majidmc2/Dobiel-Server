@@ -1,5 +1,5 @@
 ## About
-Dobile Server is server of **Dobile** tool ([see](https://github.com/majidmc2/Dobiel "Link")). It use Elastic Search for collectes patterns and search on them.
+Dobile Server is server of **Dobile** tool ([see](https://github.com/majidmc2/Dobiel "Link")). It use Elastic Search for collecting patterns and search on them.
 This server use Flask framework and has three Rest API:
 1. /send_pattern: this API is for Malware Analyzers and they can send attack patterns to server.
 2. /send_mutation: Dobiel used this API to sends mutations patterns that happened on HTML for check pattens and if a attack find, server responded it.
@@ -32,7 +32,7 @@ You should add attack patterns to server. you can use "src/test_pattern.py" and 
 
 > $ python3 src/test_pattern.py -f [ATTACK-PATTERN-FILE]
 
-Some attack pattens existed in "doc" and you can read them and write own patterns.pattens
+Some attack pattens exist in "doc" and you can read them and write own patterns.pattens
 
 ## TODO:
 - [ ] Write Document
