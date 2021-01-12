@@ -32,7 +32,7 @@ You should add attack patterns to server. you can use "src/test_pattern.py" and 
 
 > $ python3 src/test_pattern.py -f [ATTACK-PATTERN-FILE]
 
-Some attack pattens exist in "doc" and you can read them and write own patterns.pattens
+Some attack pattens exist in "doc" and you can read them and write own attack patterns.
 
 ## TODO:
 - [ ] Write Document
