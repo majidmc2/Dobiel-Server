@@ -1,6 +1,6 @@
 ## About
-Dobile Server is server of **Dobile** tool ([see](https://github.com/majidmc2/Dobiel "Link")). It use Elastic Search for collecting patterns and search on them.
-This server use Flask framework and has three Rest API:
+Dobile-Server is server of **Dobile** tool ([see](https://github.com/majidmc2/Dobiel "Link")). It uses Elastic Search for collecting patterns and searchs on them.
+This server uses Flask framework and has three Rest API:
 1. /send_pattern: this API is for Malware Analyzers and they can send attack patterns to server.
 2. /send_mutation: Dobiel used this API to sends mutations patterns that happened on HTML for check pattens and if a attack find, server responded it.
 3. /send_request: Dobiel used this API to sends web request patterns for check pattens and if a attack find, server responded it.
